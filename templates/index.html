@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraper</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your head content, including stylesheets and meta tags -->
+</head>
+<body>
+    <div class="container">
+        <h1>Web Scraper</h1>
+        <form method="post" action="{{ url_for('index') }}">
+            <div class="form-group">
+                <label for="url">Enter URL:</label>
+                <input type="text" class="form-control" id="url" name="url" placeholder="https://example.com" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Scrape and Download PDF</button>
+        </form>
+        {% if download_link %}
+            <p>Downloading your PDF...</p>
+            <script>
+                window.location.href = "{{ url_for('download_file', filename=download_link) }}";
+            </script>
+        {% endif %}
+    </div>
+</body>
+</html>
+</body>
+</html>
